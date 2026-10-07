@@ -1,0 +1,78 @@
+baseURL: https://arnavnarain.github.io/
+locale: en-us
+title: Arnav Narain
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # needed for search
+
+params:
+  env: production
+  title: Arnav Narain
+  description: Personal website of Arnav Narain
+  author: Arnav Narain
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: false
+
+  homeInfoParams:
+    Title: "Hi, I'm Arnav 👋"
+    Content: >
+      Welcome to my corner of the internet. Edit this intro in `hugo.yaml`.
+
+  socialIcons:
+    - name: github
+      url: https://github.com/arnavnarain
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+markup:
+  highlight:
+    noClasses: false
