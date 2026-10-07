@@ -1,0 +1,28 @@
+# Books shown on the home page shelf, in display order.
+# Each entry needs a title; author is optional.
+# Optional: `spine` sets shorter text for the spine; `set` gives books in a
+# multi-volume set the same binding.
+# Add `reading: true` to mark a book you're still reading (shows a bookmark).
+- title: Guns, Germs, and Steel
+  author: Jared Diamond
+- title: The History of England, Vol. 1
+  author: Thomas Babington Macaulay
+  spine: History of England I
+  set: macaulay-england
+- title: The History of England, Vol. 2
+  author: Thomas Babington Macaulay
+  spine: History of England II
+  set: macaulay-england
+- title: The History of England, Vol. 3
+  author: Thomas Babington Macaulay
+  spine: History of England III
+  set: macaulay-england
+- title: Man's Search for Meaning
+  author: Viktor Frankl
+  reading: true
+- title: A History of the World in 6 Glasses
+  author: Tom Standage
+- title: "Peter the Great: His Life and World"
+  author: Robert K. Massie
+- title: The Count of Monte Cristo
+  author: Alexandre Dumas

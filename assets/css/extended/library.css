@@ -1,0 +1,105 @@
+/* Home page bookshelf (layouts/_partials/library.html). */
+.library {
+    --shelf: var(--tertiary);
+    --slot-h: 172px;
+    --board: 6px;
+    --row-gap: 22px;
+    margin-top: 40px;
+}
+
+.library-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.library-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.library-caption {
+    font-size: 13px;
+    color: var(--secondary);
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Each row of slots sits on a shelf board drawn by the background. */
+.library .shelf {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--row-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0 var(--slot-h),
+            var(--shelf) var(--slot-h) calc(var(--slot-h) + var(--board)),
+            transparent calc(var(--slot-h) + var(--board)) calc(var(--slot-h) + var(--board) + var(--row-gap)));
+}
+
+.library .slot {
+    display: flex;
+    align-items: flex-end;
+    height: calc(var(--slot-h) + var(--board));
+    padding: 0 1px var(--board);
+    margin: 0;
+}
+
+.library .spine {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    border-radius: 2px 2px 0 0;
+    box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.18), inset 2px 0 0 rgba(255, 255, 255, 0.08);
+    cursor: default;
+    outline: none;
+    transition: transform 0.15s ease;
+}
+
+.library .spine:hover,
+.library .spine:focus-visible {
+    transform: translateY(-8px);
+}
+
+/* Bookmark ribbon for books still being read. */
+.library .spine.reading::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 4px;
+    width: 6px;
+    height: 16px;
+    background: #c9a227;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+
+.library .spine-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* Muted cloth-binding palette; readable on both light and dark themes. */
+.spine-0 { background: #2f3e57; color: #e9e4d8; }
+.spine-1 { background: #6e2a2f; color: #efe6da; }
+.spine-2 { background: #34473b; color: #e6e8dc; }
+.spine-3 { background: #8a6f4d; color: #f5efe3; }
+.spine-4 { background: #d9d3c4; color: #2a2a2a; }
+.spine-5 { background: #3d3f45; color: #e2e2e2; }
+.spine-6 { background: #5b4a3a; color: #efe6d6; }

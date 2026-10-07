@@ -1,0 +1,38 @@
+{{- with hugo.Data.library }}
+{{- $books := . }}
+{{- $count := printf "%d volume%s · hover a spine" (len $books) (cond (eq (len $books) 1) "" "s") }}
+<section class="library" aria-labelledby="library-title">
+    <div class="library-header">
+        <h2 id="library-title">Library</h2>
+        <span class="library-caption" data-default="{{ $count }}" aria-live="polite">{{ $count }}</span>
+    </div>
+    <ul class="shelf">
+        {{- range $books }}
+        {{- $h := hash.FNV32a (.set | default .title) }}
+        {{- $label := .title }}
+        {{- with .author }}{{ $label = printf "%s — %s" $label . }}{{ end }}
+        {{- if .reading }}{{ $label = printf "%s (currently reading)" $label }}{{ end }}
+        <li class="slot">
+            <span class="spine spine-{{ mod $h 7 }}{{ if .reading }} reading{{ end }}" tabindex="0" title="{{ $label }}" data-label="{{ $label }}"
+                style="height: {{ add 128 (mod $h 36) }}px; width: {{ add 22 (mod (div $h 7) 10) }}px">
+                <span class="spine-title">{{ .spine | default .title }}</span>
+            </span>
+        </li>
+        {{- end }}
+    </ul>
+</section>
+<script>
+    (function () {
+        var caption = document.querySelector('.library-caption');
+        if (!caption) return;
+        document.querySelectorAll('.library .spine').forEach(function (spine) {
+            var show = function () { caption.textContent = spine.dataset.label; };
+            var reset = function () { caption.textContent = caption.dataset.default; };
+            spine.addEventListener('mouseenter', show);
+            spine.addEventListener('focus', show);
+            spine.addEventListener('mouseleave', reset);
+            spine.addEventListener('blur', reset);
+        });
+    })();
+</script>
+{{- end }}
