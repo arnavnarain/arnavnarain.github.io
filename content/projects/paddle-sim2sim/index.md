@@ -10,7 +10,8 @@ summary: "Training a PPO policy to bounce a ball in Isaac Lab, then swapping the
 
 I spent the last 1.5 years at Amazon Robotics on the team responsible for robotic simulation. As an SDE, I worked across the Omniverse stack, USD, and building simulated environments in software like Unity. Naturally when working in “Big Tech”, I worked on specific, small parts of the pipeline.
 
-**Goal:** See the end-to-end flow of preparing assets, choosing a physics engine, tinkering with an RL policy, and finally examining the Sim2Sim gap. And escape Amazon tooling to get a better idea of industry standards.
+**Goal:** See the end-to-end flow of preparing assets, choosing a physics engine, tinkering with an RL policy, and finally examining the Sim2Sim gap.\
+Get a better idea of industry standards outside Amazon internal tooling.
 
 ## Preamble
 
