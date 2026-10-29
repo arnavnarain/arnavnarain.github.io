@@ -3,7 +3,7 @@ title: "SO-101 Arm: First Impressions"
 date: 2026-10-29
 draft: false
 tags: ["robotics", "so-101", "lerobot", "teleoperation"]
-summary: "A warning for the reader: if you expect to see the solution to dexterity here, expect to be disappointed. We're just running smoke tests today."
+summary: "I chose the SO-101 arm because it's fairly cheap and beginner friendly. It's a 6-axis robot arm built to work natively with the Hugging Face LeRobot ecosystem for recording datasets and training policies."
 ---
 
 {{< figure src="hero.jpg" alt="The orange SO-101 follower arm with its gripper next to the leader arm with its trigger handle, both folded on a desk" caption="Follower (left, with the gripper) and leader (right, with the handle)." >}}
@@ -55,7 +55,7 @@ Cadence summary — whole run · target 60 Hz (16.7 ms budget per tick): 29904 t
 
 *Mostly a steady 60 Hz, with a dip roughly once a minute over ~30,000 ticks.*
 
-If computations were to scale, that could cause a more significant delay between the follower and the leader. The graph above shows a *slight* delay between follower and leader action, under 100ms per joint. Part of that is the round trip from the leader, to my laptop, to the follower, but most of it is the motors physically catching up. That's also why the error spikes during fast swings. Worth paying attention to, since it's exactly the kind of thing a simulator has to get right.
+If computations were to scale, that could cause a more significant delay between the follower and the leader. The graph above shows a *slight* delay between follower and leader action, under 100ms per joint. Part of that is the round trip from the leader, to my laptop, to the follower, but most of it is the motors physically catching up. That's also why the error spikes during fast swings. Worth paying attention to, since it will be more relevant when we mix in simulation.
 
 ## What's next
 
