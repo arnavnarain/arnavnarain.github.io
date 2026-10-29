@@ -26,8 +26,6 @@ On the software side, I set up a Python virtual environment, complete with the `
 
 After connecting the two arms to my laptop and to power, I was all set. I ran a quick command to find the ports the leader & follower live on and ran basic calibration to find the complete range of motion present in each arm.
 
-*Not pictured: the mini heart attack I had when the arm suddenly shut off mid-calibration. It was a loose cable.*
-
 ## The Smoke Test
 
 The problem for today is getting the follower to pick up a piece of measuring tape. Hardly an unsolved problem in robotics, especially when using the leader to direct its actions. Here's a clip of me doing it:
