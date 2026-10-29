@@ -1,0 +1,12 @@
+{{- /* Embeds a video from the page bundle: {{< video src="clip.mp4" >}} */ -}}
+{{- with .Page.Resources.Get (.Get "src") }}
+<figure>
+    <video src="{{ .RelPermalink }}" controls muted playsinline loop preload="metadata"
+        style="display: block; width: 100%; border-radius: 6px"></video>
+    {{- with $.Get "caption" }}
+    <figcaption>{{ . }}</figcaption>
+    {{- end }}
+</figure>
+{{- else }}
+{{- errorf "video shortcode: %q not found in %s" (.Get "src") .Page.File.Path }}
+{{- end }}
