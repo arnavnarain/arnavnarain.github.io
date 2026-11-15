@@ -15,7 +15,7 @@ params:
   description: Arnav Narain — software engineer at Google (YouTube)
   author: Arnav Narain
   defaultTheme: auto
-  mainSections: ["projects"]
+  mainSections: ["blog", "papers"]
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowPostNavLinks: true
@@ -40,7 +40,11 @@ params:
 
 menu:
   main:
-    - identifier: projects
-      name: Projects
-      url: /projects/
+    - identifier: blog
+      name: Blog
+      url: /blog/
       weight: 10
+    - identifier: papers
+      name: Papers
+      url: /papers/
+      weight: 20

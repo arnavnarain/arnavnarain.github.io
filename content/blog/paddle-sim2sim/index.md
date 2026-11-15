@@ -2,6 +2,7 @@
 title: "Bouncing a Ball Across the Sim2Sim Gap"
 date: 2026-10-14
 draft: false
+aliases: ["/projects/paddle-sim2sim/"]
 tags: ["reinforcement learning", "simulation", "isaac lab", "mujoco", "sim2sim"]
 summary: "Training a PPO policy to bounce a ball in Isaac Lab, then swapping the physics engine underneath it."
 ---
