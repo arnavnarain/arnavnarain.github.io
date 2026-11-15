@@ -2,6 +2,7 @@
 title: "SO-101 Arm: First Impressions"
 date: 2026-10-29
 draft: false
+aliases: ["/projects/so101-first-impressions/"]
 tags: ["robotics", "so-101", "lerobot", "teleoperation"]
 summary: "I chose the SO-101 arm because it's fairly cheap and beginner friendly. It's a 6-axis robot arm built to work natively with the Hugging Face LeRobot ecosystem for recording datasets and training policies."
 ---
